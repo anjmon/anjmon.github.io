@@ -19,3 +19,4 @@ A **time series** is a set of observations $x_t$, at a specific time t. Most exa
 
 {{< figure src="/images/ch1/ex1.png" alt="Sales Plot" width="600" height="300" caption="Fig1. Sales Data" class="figure" figure="1"  >}}
 
+The above is an example of time series data. The time steps aren't at regular intervals.
