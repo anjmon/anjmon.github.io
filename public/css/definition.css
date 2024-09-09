@@ -1,0 +1,27 @@
+.definition {
+  margin: 20px ;
+  padding: 15px;
+  background-color: #424242; /* Light gray background */
+  border: 1px solid #5e5e5e; /* Adds a colored left border for visual effect */
+  border-radius: 2px; /* Rounds the corners of the box */
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  overflow: hidden; /* Ensures the content stays inside the box */
+  clear: both; /* Prevents the box from floating and ensures it stays within the content flow */
+}
+
+
+.definition dt {
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  color: #ccc6c6; /* Darker color for the term */
+}
+
+.definition dd {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 1em;
+  color: #a39f9f; /* Slightly lighter color for the definition */
+  line-height: 1.5;
+}
+

@@ -7,11 +7,7 @@ title = "Anjan"
 
 ## Hello, I'm Anjan
 
-I'm a **Data Scientist** with a growing passion for **Time Series Analysis** and **Forecasting**. 
-As I dive deeper into this specialized field, I am continuously honing my **Python programming skills**, which are crucial for tackling complex data problems.
-
-I refine my expertise in Python through multiple avenues:
-
-- **Professional Experience**: My day job provides me with real-world challenges that push me to apply and enhance my coding abilities.
-- **Books**: I regularly engage with technical literature, expanding my knowledge of algorithms, data structures, and machine learning techniques.
-- **Leetcode**: I actively solve coding problems, improving my problem-solving skills and deepening my understanding of various algorithms.
+I'm a **Data Scientist** with a bend towards **Time Series Analysis and Forecasting**. 
+I mostly work with Python and getting better at the language everyday. I have been practicing problems on LeetCode (probably not as much as I should)
+and sometimes pick up *Learning Python* by **Mark Lutz** to deepen my knowledge of Python.
+Currently, I am also reading *Time Series Analysis and Forecasting* by **Brockwell, P. J., & Davis, R. A.**

@@ -6,6 +6,7 @@
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <link rel="stylesheet" href="/css/image.css">
+  <link rel="stylesheet" href="/css/definition.css">
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,7 +46,7 @@
   <meta itemprop="description" content="Examples Objectives and some simple models in Time Series Analysis">
   <meta itemprop="datePublished" content="2024-09-09T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-09-09T00:00:00+00:00">
-  <meta itemprop="wordCount" content="72">
+  <meta itemprop="wordCount" content="236">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Time-Series,Data-Science,Math">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -284,6 +285,28 @@
     </figcaption>
 </figure>
 
+<p>The above is an example of time series data. The time steps aren&rsquo;t at regular intervals. Test</p>
+<h2 id="time-series-models">Time Series Models</h2>
+<dl class="definition">
+    <dt>Definition 1</dt>
+    <dd><p>A <strong>time series</strong> model for the observed data $\lbrace x_t \rbrace$ is a specification of the joint
+distributions (or possibly only the means and covariances) of a sequence of random
+variables $\lbrace X_t \rbrace$ of which $\lbrace x_t\rbrace$ is postulated to be a realization.</p>
+<p>(Brockwell &amp; Davis, 2016)</p>
+</dd>
+
+</dl>
+<p>The nature of the models that we deal with are probabilistic because of the presence of some stochasticity, either due to an unknown input or due
+to the process of measurement itself.</p>
+<p>An ideal time series model would specify the joint probability distributions at all time steps. $ \big( t \epsilon  \lbrace 1,2 &hellip; n \rbrace \big)$</p>
+<p>i.e. all the probabilities,</p>
+<p>$$
+P[X_1 &lt; x_1, &hellip; X_n &lt; x_n ]  \hspace{2em}   n = 1,2, \ldots
+$$</p>
+<h3 id="references">References</h3>
+<ul>
+<li>Brockwell, P. J., &amp; Davis, R. A. (2016). Introduction to time series and forecasting (3rd ed.). Springer.</li>
+</ul>
 
 </content>
 <p>
