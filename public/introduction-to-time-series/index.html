@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+ 
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <link rel="stylesheet" href="/css/image.css">
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Introduction to Time Series | Bird Blog</title>
+<meta name="title" content="Introduction to Time Series" />
+<meta name="description" content="Examples Objectives and some simple models in Time Series Analysis" />
+<meta name="keywords" content="time-series,data-science,math," />
+
+
+<meta property="og:url" content="http://localhost:1313/introduction-to-time-series/">
+  <meta property="og:site_name" content="Bird Blog">
+  <meta property="og:title" content="Introduction to Time Series">
+  <meta property="og:description" content="Examples Objectives and some simple models in Time Series Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-09-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-09T00:00:00+00:00">
+    <meta property="article:tag" content="Time-Series">
+    <meta property="article:tag" content="Data-Science">
+    <meta property="article:tag" content="Math">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Introduction to Time Series">
+  <meta name="twitter:description" content="Examples Objectives and some simple models in Time Series Analysis">
+
+
+
+
+  <meta itemprop="name" content="Introduction to Time Series">
+  <meta itemprop="description" content="Examples Objectives and some simple models in Time Series Analysis">
+  <meta itemprop="datePublished" content="2024-09-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-09-09T00:00:00+00:00">
+  <meta itemprop="wordCount" content="72">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Time-Series,Data-Science,Math">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+    <h2>Bird Blog</h2>
+  </a>
+  <nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false}
+                    ]
+                });
+            });
+        </script>
+  </head>
+  ...
+</html>
+</header>
+  <main>
+
+<h1>Introduction to Time Series</h1>
+<p>
+  <i>
+    <time datetime='2024-09-09' pubdate>
+      9 September 2024
+    </time>
+  </i>
+</p>
+
+<content>
+  <h2 id="examples-of-time-series">Examples of Time Series</h2>
+<p>A <strong>time series</strong> is a set of observations $x_t$, at a specific time t. Most examples of time series in the digital format are of the discrete type. Any digital or physical recording of a continuous analog signal can only be performed by sampling and, is hence rendered discrete. So I guess for all practical purposes, we would be mostly dealing with discrete time series.</p>
+<figure class="figure"><img src="/images/ch1/ex1.png"
+    alt="Sales Plot" width="600" height="300"><figcaption>
+      <p>Fig1. Sales Data</p>
+    </figcaption>
+</figure>
+
+
+</content>
+<p>
+  
+  <a href="http://localhost:1313/blog/time-series/">#Time-Series</a>
+  
+  <a href="http://localhost:1313/blog/data-science/">#Data-Science</a>
+  
+  <a href="http://localhost:1313/blog/math/">#Math</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+    
+</body>
+
+</html>

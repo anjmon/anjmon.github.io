@@ -1,0 +1,21 @@
+/* Style for scientific figure */
+figure {
+  text-align: center; /* Center-aligns the figure and caption */
+  margin: 20px 0; /* Adds vertical spacing around the figure */
+}
+
+figure img {
+  display: inline-block; /* Ensures the image is treated as inline content */
+  max-width: 100%; /* Ensures the image doesn’t overflow its container */
+  border: 1px solid #ddd; /* Adds a light border around the image */
+  border-radius: 4px; /* Rounds the corners of the image */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+figure figcaption {
+  display: inline-block; /* Centers the caption with respect to the image */
+  font-style: italic; /* Styles the caption in italics */
+  margin-top: 10px; /* Adds space between the image and the caption */
+  font-size: 0.9em; /* Slightly smaller font size for the caption */
+  color: #666; /* Darker gray color for the caption text */
+}

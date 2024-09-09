@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data-Science on Bird Blog</title>
+    <link>http://localhost:1313/blog/data-science/</link>
+    <description>Recent content in Data-Science on Bird Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2024, Anjan.</copyright>
+    <lastBuildDate>Mon, 09 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Time Series</title>
+      <link>http://localhost:1313/introduction-to-time-series/</link>
+      <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/introduction-to-time-series/</guid>
+      <description>&lt;h2 id=&#34;examples-of-time-series&#34;&gt;Examples of Time Series&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;time series&lt;/strong&gt; is a set of observations $x_t$, at a specific time t. Most examples of time series in the digital format are of the discrete type. Any digital or physical recording of a continuous analog signal can only be performed by sampling and, is hence rendered discrete. So I guess for all practical purposes, we would be mostly dealing with discrete time series.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
