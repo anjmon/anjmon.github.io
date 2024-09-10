@@ -8,7 +8,7 @@ tags = [
 
 ]
 math=true
-draft=true
+draft=false
 +++
 
 ## Examples of Time Series
