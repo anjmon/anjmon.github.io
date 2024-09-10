@@ -46,7 +46,7 @@
   <meta itemprop="description" content="Examples Objectives and some simple models in Time Series Analysis">
   <meta itemprop="datePublished" content="2024-09-09T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-09-09T00:00:00+00:00">
-  <meta itemprop="wordCount" content="236">
+  <meta itemprop="wordCount" content="505">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Time-Series,Data-Science,Math">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -300,12 +300,35 @@ variables $\lbrace X_t \rbrace$ of which $\lbrace x_t\rbrace$ is postulated to b
 to the process of measurement itself.</p>
 <p>An ideal time series model would specify the joint probability distributions at all time steps. $ \big( t \epsilon  \lbrace 1,2 &hellip; n \rbrace \big)$</p>
 <p>i.e. all the probabilities,</p>
-<p>$$
-P[X_1 &lt; x_1, &hellip; X_n &lt; x_n ]  \hspace{2em}   n = 1,2, \ldots
+<p>$$P[X_1 &lt; x_1, &hellip; X_n &lt; x_n ]  \hspace{2em}   n = 1,2, \ldots $$</p>
+<p>Practically, it isn&rsquo;t possible to model the joint probabilities due to the large number of parameters that it would create. Instead we we look at the
+1st and 2nd order moments $ E(X_t) \text{ and } E(X_tX_{t+h})$ , $ t = 1,2,&hellip;$ and $h = 0,1,2&hellip;$</p>
+<p><strong>Example 1- iid Noise</strong></p>
+<p>For iids,</p>
+<p>$$ P[X_1\leq x_1,\dots X_n \leq x_n ] = F(x_1)\dots F(x_2)$$</p>
+<p>where, F is the cumulative distribution function.</p>
+<p>A function that minimises the mean squared error $E\Big[ \Big(X_{n+h} - f(X_1,\dots , X_n)\Big)^2\Big] $ is 0.</p>
+<h3 id="trend">Trend</h3>
+<p>For models with trend (upward or downward), we can consider the following form:</p>
+<p>$$ X_t = m_t + Y_t
 $$</p>
+<p>Where $m_t$ is a slowly changing component known as trend and $Y_t$ has zero mean.</p>
+<p>A useful approach for estimating $m_t$ is the method of least squares.</p>
+<p>In the least squares procedure we attempt to fit a parametric famaliy of functions,</p>
+<p>e.g.,  $m_t =  a_0 + a_1t + a_2t^2$</p>
+<p>to the data $\lbrace x_1,x_2&hellip;,x_n \rbrace$ by choosing the parameters to minimize  $\sum_{t=1}^{n} (x_t - m_t)^2 $</p>
+<p>This method is called least squares regression.</p>
+<h3 id="seasonality">Seasonality</h3>
+<p>For seasonal factors, we can consider the following model,</p>
+<p>$$ X_t = s_t + Y_t $$</p>
+<p>Since $s_t$ is a periodic function of t, a convenient choice for $s_t$ is a sum of harmonics given by,</p>
+<p>$$ s_t = a_0 + \sum_{j=1}^k (a_jcos(\lambda_jt) + b_jsin(\lambda_jt))
+$$</p>
+<p>The coefficients fo the above model can be obtained by something called <strong>Harmonic Regression.</strong> I might go into the details of Harmonic Regression in some other post. Even I am yet to fully understand it. For now I have included a reference.</p>
 <h3 id="references">References</h3>
 <ul>
 <li>Brockwell, P. J., &amp; Davis, R. A. (2016). Introduction to time series and forecasting (3rd ed.). Springer.</li>
+<li><a href="http://www-stat.wharton.upenn.edu/~stine/stat910/lectures/06_harmonic_regr.pdf">http://www-stat.wharton.upenn.edu/~stine/stat910/lectures/06_harmonic_regr.pdf</a></li>
 </ul>
 
 </content>
