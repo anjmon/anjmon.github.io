@@ -14,7 +14,7 @@
       <link>http://localhost:1313/introduction-to-time-series/</link>
       <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/introduction-to-time-series/</guid>
-      <description>&lt;h2 id=&#34;examples-of-time-series&#34;&gt;Examples of Time Series&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;time series&lt;/strong&gt; is a set of observations $x_t$, at a specific time t. Most examples of time series in the digital format are of the discrete type. Any digital or physical recording of a continuous analog signal can only be performed by sampling and, is hence rendered discrete. So I guess for all practical purposes, we would be mostly dealing with discrete time series.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;examples-of-time-series&#34;&gt;Examples of Time Series&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;time series&lt;/strong&gt; is a set of observations $x_t$, at a specific time t. Most examples of time series in the digital format are of the discrete type. Any digital or physical recording of a continuous analog signal can only be performed by sampling and, is hence rendered discrete. So I guess for all practical purposes, we would be mostly dealing with discrete time series.&lt;/p&gt;&#xA;&lt;figure class=&#34;figure&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/ch1/ex1.png&#34;&#xA;    alt=&#34;Sales Plot&#34; width=&#34;600&#34; height=&#34;300&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;p&gt;Fig1. Sales Data&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
